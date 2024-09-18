@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sports</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<!-- Mention annotated class -->
+		<mapping class="com.demo.project.entity.Student" />
+		<mapping class="com.demo.project.entity.Coach" />
+		<mapping class="com.demo.project.entity.Batch" />
+		<mapping class="com.demo.project.entity.Admin" />
+		<mapping class="com.demo.project.entity.Sport" />
+		<mapping class="com.demo.project.entity.Payment" />
+		<mapping class="com.demo.project.entity.MatchSession" />
+		<mapping class="com.demo.project.entity.TrainingSession" />
+    </session-factory>
+</hibernate-configuration>
